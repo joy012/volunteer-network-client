@@ -1,0 +1,28 @@
+.card{
+    border: none;
+    outline: none;
+    position: relative;
+    width: 98%!important;
+    border-radius: 12px 12px 12px 12px;
+    cursor: pointer;
+}
+.card:hover{
+    box-shadow: 5px 5px 15px white, -5px -5px 15px white;
+}
+.card img{
+    border-radius: 0 0 10px 10px;
+}
+.card-body{
+    border-radius: 0 0 10px 10px;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    height: 25%;
+    padding: 0.6rem!important;
+}
+
+@media screen and (max-width:450px){
+    .h5{
+        font-size:0.75rem;
+    }
+}

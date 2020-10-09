@@ -1,0 +1,16 @@
+.nav-link{
+    margin: 0 0.3rem!important;
+    color: black!important;
+    font-weight: 500;
+    font-size: 1.1rem;
+}
+.btn{
+    font-size: 1.1rem;
+}
+.nav-link:hover{
+    background-color: white;
+    border-radius: 24px;
+}
+.logo{
+    width: 20%;
+}

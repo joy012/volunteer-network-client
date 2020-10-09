@@ -1,0 +1,57 @@
+.body{
+    height:100vh;
+}
+.login{
+    border: 1px solid black;
+    border-radius: 8px;
+    height: 50%!important;
+    margin: auto;
+}
+.social-login{
+    border: 1px solid #C7C7C7;
+    border-radius:20px;
+    padding: 6px 0;
+    margin: auto;
+    cursor: pointer;
+}
+.center{
+    position: relative;
+    top: 12%;
+}
+.google-logo{
+    width:37px;
+    height: 37px;
+}
+
+
+
+@media screen and (min-width: 992px){
+    .login{
+        width: 38%;
+        height: 50%!important;
+    }
+}
+@media screen and (max-width: 991px){
+    .login{
+        width: 42%;
+        height: 50%!important;
+    }
+}
+@media screen and (max-width: 767px){
+    .login{
+        width: 55%;
+        height: 50%!important;
+    }
+}
+@media screen and (max-width: 575px){
+    .login{
+        width: 70%;
+        height: 50%!important;
+    }
+}
+@media screen and (max-width: 430px){
+    .login{
+        width: 90%;
+        height: 50%!important;
+    }
+}

@@ -1,0 +1,51 @@
+.login-form {
+    margin: 30px auto;
+    background-color: #fff;
+}
+.login-form form {        
+    margin-bottom: 15px;
+    color:black;
+    box-shadow: 5px 5px 10px lightgrey;
+    padding: 30px;
+    border: 1px solid black;
+    border-radius: 12px;
+}
+.login-form form input {
+    border: none;
+    border-bottom: 1px solid lightgrey;
+    font-weight: 600;
+    color: black;
+}
+.form-control{
+    border-radius: 2px;
+}
+.react-datepicker-wrapper{
+    display: block;
+}
+
+
+@media screen and (min-width: 992px){
+    .login-form{
+        width: 40%;
+    }
+}
+@media screen and (max-width: 991px){
+    .login-form{
+        width: 60%;
+    }
+}
+@media screen and (max-width: 767px){
+    .login-form{
+        width: 75%;
+    }
+}
+@media screen and (max-width: 575px){
+    .login-form{
+        width: 90%;
+    }
+}
+@media screen and (max-width: 430px){
+    .login-form{
+        width: 100%;
+    }
+}

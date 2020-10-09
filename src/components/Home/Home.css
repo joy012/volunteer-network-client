@@ -1,0 +1,35 @@
+.home-bg{
+    position: relative;
+    background-image: url(../../images/backgorund.png);
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position: top center;
+}
+.blur{
+    backdrop-filter: blur(12px);
+}
+.input-group-text{
+    background-color: #3F90FC;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.input-group{
+    max-width: 80%;
+    margin: auto;
+}
+
+
+
+@media screen and (min-width: 768px){
+    .input-group{
+        max-width: 45%;
+        margin: auto;
+    }
+}
+@media screen and (min-width: 992px){
+    .input-group{
+        max-width: 35%;
+        margin: auto;
+    }
+}
