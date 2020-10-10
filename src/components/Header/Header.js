@@ -2,12 +2,14 @@ import React, { useContext } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { UserContext } from '../../App';
 import logo from '../../logos/Group 1329.png';
-import './Header.css'
+import './Header.css';
+
 
 const Header = () => {
     const [user, setUser] = useContext(UserContext);
     const location = useLocation();
     const isLocation = location.pathname === '/login' || location.pathname === '/register';
+
     return (
         <div className="container">
             <nav className="navbar navbar-expand-lg navbar-light pt-5">
@@ -25,7 +27,7 @@ const Header = () => {
                                 <Link className="nav-link" to="/myTask">My Task</Link>
                                 {
                                     user.email?
-                                    <Link className="nav-link">{user.name}</Link>
+                                    <Link to="/myTask" className="nav-link">{user.name}</Link>
                                     :
                                     <>
                                         <Link className="btn btn-primary px-4 rounded-pill mt-2 mt-lg-0 mr-lg-2 mx-auto" to="/login">Join Us</Link>

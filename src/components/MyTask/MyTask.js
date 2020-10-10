@@ -1,13 +1,14 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { UserContext } from '../../App';
 import Header from '../Header/Header';
 import './MyTask.css';
+import image from '../../images/myTask.png'
 
 const MyTask = () => {
     const [tasks, setTasks] = useState([]);
     const [user, setUser] = useContext(UserContext);
-    useEffect(() => {
-        fetch('http://localhost:3360/tasks?email='+user.email, {
+    const loadMyTask = () => {
+        fetch('https://volunteer-network-spa.herokuapp.com/tasks?email='+user.email, {
             method: "GET",
             headers: {
                 authorization: `Bearer ${sessionStorage.getItem('token')}`,
@@ -16,26 +17,39 @@ const MyTask = () => {
         })
             .then(res => res.json())
             .then(data => setTasks(data));
-    }, [])
-    console.log(tasks,user)
+    }
+    loadMyTask();
+    
+    const deleteTask = id => {
+        fetch(`https://volunteer-network-spa.herokuapp.com/deleteTask/${id}`,{
+            method: "DELETE"
+        })
+        .then(res => res.json())
+        .then(result => {
+            if(result){
+                loadMyTask();
+            }
+        })
+    } 
+    
     return (
-        <div style={{backgroundColor: '#eee'}}>
+        <div>
             <Header />
             <div className="container py-5">
                 <div className="row">
                         {
                             tasks.map(task => 
-                                <div className="col-md-6 mt-5">
-                                    <div className="task mb-3">
-                                    <div className="row">
+                                <div className="col-md-6 mt-5" key={task._id}>
+                                    <div className="task mb-3 p-3">
+                                    <div className="row align-items-center">
                                         <div className="col-4">
-                                            <img src={task.task.img} className="d-block w-100" alt="..." />
+                                            <img src={task.task.img || image} className="d-block w-100 rounded" alt="..." />
                                         </div>
                                         <div className="col-8 align-self-start">
                                             <div className="body-text">
-                                                <h5 className="mt-3">{task.task.name}</h5>
+                                                <h5 className="mt-sm-3 mb-sm-2">{task.task.name}</h5>
                                                 <p>{task.date}</p>
-                                                <button className="btn btn-sm btn-secondary">Cancel</button>
+                                                <button onClick={() => deleteTask(`${task._id}`)} className="btn btn-sm btn-danger">Cancel</button>
                                             </div>
                                         </div>
                                     </div>

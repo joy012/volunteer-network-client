@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { UserContext } from '../../App';
 import './Events.css';
+import commonImg from '../../images/myTask.png';
 
 const Event = ({ event }) => {
     const [user, setUser] = useContext(UserContext);
@@ -18,7 +19,7 @@ const Event = ({ event }) => {
         <div className='col-6 col-md-4 col-lg-3'>
             <Link to='/register'>
                 <div onClick={handleTask} className="card my-3" style={{ width: '18rem' }}>
-                    <img src={img} className="card-img-top" alt="..." />
+                    <img src={img || commonImg} className="card-img-top" alt="..." />
                     <div className="card-body text-center" style={{ backgroundColor: color[randomColor] }}>
                         <h5 className="text-white h5">{name}</h5>
                     </div>

@@ -2,9 +2,9 @@ import React, { createContext, useState } from 'react';
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Link
+  Route
 } from "react-router-dom";
+import Admin from './components/Admin/Admin';
 import Home from './components/Home/Home';
 import Login from './components/Login/Login';
 import MyTask from './components/MyTask/MyTask';
@@ -19,7 +19,8 @@ function App() {
         name: '',
         email: '',
         desc: '',
-        task: ''
+        task: '',
+        date: ''
     })
 
   return (
@@ -37,6 +38,12 @@ function App() {
         </PrivateRoute>
         <PrivateRoute path='/myTask'>
             <MyTask/>
+        </PrivateRoute>
+        <PrivateRoute path='/admin'>
+            <Admin/>
+        </PrivateRoute>
+        <PrivateRoute path='/addEvent'>
+            <Admin/>
         </PrivateRoute>
         <Route exact path='/'>
             <Home/>

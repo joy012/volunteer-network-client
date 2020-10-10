@@ -15,13 +15,11 @@ const Register = () => {
     const handleBlur = (e) => {
         const newUserInfo = {...user};
         newUserInfo[e.target.name] = e.target.value;
+        newUserInfo.date = startDate.toDateString();
         setUser(newUserInfo);
     }
     const handleSubmit = (e) => {
-        const userInfo = {...user};
-        userInfo.date = startDate.toDateString();
-        setUser(userInfo);
-        fetch("http://localhost:3360/addVolunteer", {
+        fetch("https://volunteer-network-spa.herokuapp.com/addVolunteer", {
             method:'POST',
             headers: { 'Content-Type': 'application/json'},
             body: JSON.stringify(user)
@@ -36,6 +34,7 @@ const Register = () => {
         e.target.reset();
         e.preventDefault();
     }
+    
     return (
         <div className="container">
              <Header />
