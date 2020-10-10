@@ -13,7 +13,7 @@ const Header = () => {
     return (
         <div className="container">
             <nav className="navbar navbar-expand-lg navbar-light pt-5">
-                <img className={`logo d-block ${isLocation && 'mx-auto'}`} src={logo} alt="" />
+                <img className={`logo d-block ${isLocation? 'mx-auto' : 'mr-auto'}`} src={logo} alt="" />
                 {
                     !isLocation &&
                     <>
